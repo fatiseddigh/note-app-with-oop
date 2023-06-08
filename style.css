@@ -4,15 +4,18 @@
   --primaryColor: #f87000;
   --secondaryColor: #b4876d;
   --thirdColor: #fff7f0;
+  --border-color: #ffe8d1;
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #dfe0df;
-  --mainText: #454555;
+  --mainText: #2f1d19;
+  --secondText: #54433a;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
   --mainRed: #db2777;
   --mainGreen: #005246;
   --bodyColor: #f8f8ff;
+  --nav-width: 250px;
 }
 
 * {
@@ -24,5 +27,101 @@ body {
   color: var(--mainBlack);
   font-family: "Lato", sans-serif;
   background-color: var(--mainGrey);
+  direction: rtl;
   /* position: relative; */
+}
+.note {
+  display: flex;
+}
+
+.notes__sidebar {
+  background: var(--primaryColor);
+  height: 100vh;
+  width: var(--nav-width);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  padding: 1.5rem 1rem;
+  top: 0;
+  right: 0;
+  border-radius: 100px 0 0 0;
+  transition: all 0.3s ease-out;
+}
+.notes__logo {
+  color: var(--mainText);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.75rem 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  border-bottom: 2px solid var(--border-color);
+}
+.notes__list {
+  flex-grow: 1;
+  margin-top: 1rem;
+  overflow-y: auto;
+}
+.notes__list::-webkit-scrollbar {
+  display: none;
+}
+.notes__list-item {
+  border-bottom: 1px solid var(--border-color);
+  margin: 15px 0;
+  cursor: pointer;
+  color: var(--secondText);
+}
+.notes__list-item--selected {
+  background-color: var(--secondaryColor);
+  border-radius: 7px;
+  font-weight: bold;
+}
+.notes__body-title,
+.notes__body-update {
+  padding: 10px;
+}
+.notes__body-title {
+  font-size: 1.2em;
+}
+.notes__body-desc {
+  padding: 0 10px;
+}
+.notes__body-update {
+  color: var(--mainGrey);
+}
+.notes__add {
+  background-color: var(--mainGreen);
+  border: none;
+  border-radius: 7px;
+  color: var(--secondaryColor);
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0.75rem 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.notes__add:hover {
+  background-color: #00b33a;
+}
+.notes__preview {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 2em 3em;
+}
+.notes__title,
+.notes__desc {
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+}
+.notes__title {
+  margin-bottom: 0.75rem;
+}
+.notes__desc {
+  height: 90%;
+  width: 100%;
 }
