@@ -125,3 +125,19 @@ body {
   height: 90%;
   width: 100%;
 }
+.notes__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.notes__list-trash {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--mainRed);
+}
